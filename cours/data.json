@@ -1,0 +1,14 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Night Owl",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.tabSize": 2,
+  "http.systemCertificates": false,
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.donotVerifyTags": true
+}
