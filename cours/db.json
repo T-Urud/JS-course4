@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": "4bd5",
+      "pseudo": "FromScratch",
+      "message": "bonjour tout le monde"
+    },
+    {
+      "id": "71f1",
+      "pseudo": "FromScratch",
+      "message": "bonjour tout le monde"
+    }
+  ],
+  "users": [
+    {
+      "id": "1c74",
+      "pseudo": "FromScratch",
+      "age": 25
+    },
+    {
+      "id": "cee0",
+      "pseudo": "FromScratch",
+      "age": 42
+    }
+  ]
+}
