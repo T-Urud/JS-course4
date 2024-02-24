@@ -65,3 +65,29 @@ document.querySelector("form").addEventListener("submit", () => {
     console.log("data envoye")
   );
 });
+
+// ----------------
+// Asynchrone (exectuter du code mais dire attend avant de le faire)
+//  3 façons
+// ----------------
+
+setTimeout(() => {
+  // console.log("tst");
+}, 2000);
+
+// Promise
+fetch("monlien").then((res) => res);
+
+// Async/Await
+async function fetchData() {
+  await fetch("monlien");
+  // attend que le await soit executé avant de faire la suite.
+  // Peut faire une cascade de await
+
+  executeFonction();
+}
+
+const fetchData2 = async () => {
+  await fetch("monlien");
+  executeFonction();
+};
