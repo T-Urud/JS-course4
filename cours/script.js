@@ -76,11 +76,11 @@ setTimeout(() => {
 }, 2000);
 
 // Promise
-fetch("monlien").then((res) => res);
+// fetch("monlien").then((res) => res);
 
 // Async/Await
 async function fetchData() {
-  await fetch("monlien");
+  // await fetch("monlien");
   // attend que le await soit executé avant de faire la suite.
   // Peut faire une cascade de await
 
@@ -91,3 +91,59 @@ const fetchData2 = async () => {
   await fetch("monlien");
   executeFonction();
 };
+
+// ----------------
+// Le JSON
+// ----------------
+
+// Méthode .json() => méthode qui s'auto-résout en royant le Body de la requête
+
+fetch("data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    // Stringify => convertit en JSON
+    let settings = JSON.stringify(data);
+    // Parse => transforme json en object JS
+    // console.log(JSON.parse(settings));
+  });
+
+// ---------------
+// Web API
+// ---------------
+
+// 1) CLIENT STORAGE
+// a) Local Storage
+
+// cookies peut contenir 4ko d'info (faible), local storage (10mo default) a une capacité de stockage +grande
+// en local storage, info (click, déplacements souris...) reste sur ordi du client. PAS DE TRANSIT DE DONNEES
+
+localStorage.data = "je stock la data";
+// document.body.textContent = localStorage.data;
+
+localStorage.removeItem("data");
+
+const obj = {
+  name: "julien",
+  age: 24,
+};
+
+localStorage.user = JSON.stringify(obj);
+// console.log(JSON.parse(localStorage.user));
+
+// on ne peut pas passer objet ou tableau. Obligatoirement une chaîne de caracteres
+
+// b) Session Storage
+// stockage jusqu'à la fin de la session (fermeture de la page)
+
+sessionStorage.dataSettings = "55px";
+
+sessionStorage.clear();
+
+// 2) Les cookies
+// server --> navigator, stockés par navigator
+// de base s'arrête à la fin de session
+
+document.cookie = "username=dpr";
+
+// bonne pratique (secure et samesite IMPORTANTS (évite hack))
+document.cookie = "pseudo=FS;path=/; max-age=45000; secure; samesite";
