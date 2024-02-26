@@ -27,7 +27,7 @@ function mealsDisplay() {
             ingredients.push(`<li>${ingredient} - ${measure}</li>`);
           }
         }
-
+        console.log(meal);
         console.log(ingredients);
 
         return `
